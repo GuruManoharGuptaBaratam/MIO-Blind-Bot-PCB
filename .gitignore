@@ -1,0 +1,8 @@
+# KiCad temporary and backup files
+*.bck
+*.kicad_prl
+*-bak
+*-bak2
+_autosave-*
+*.tmp
+*.lck
