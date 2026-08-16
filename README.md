@@ -1,7 +1,8 @@
 <div align="center">
 
-<!-- <img src="Symbols/MIO-Logo.png" alt="MIO Logo" width="180"/> -->
 <img src="Symbols/MIO-Logo.gif" alt="MIO Logo" width="180"/>
+
+# MIO-Blind-Bot-PCB
 
 **Custom hardware design for MIO — a wearable assistive device for blind and low-vision users**
 
