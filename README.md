@@ -67,6 +67,28 @@ For the editable source, see [`Hardware/MIO-Blind BOT.kicad_sch`](Hardware/MIO-B
 
 ---
 
+## Footprints & 3D Models
+
+Custom footprints and 3D models used in this design are included so the project can be opened and rendered without missing library references. Each subfolder is a standalone KiCad footprint library (`.pretty`-style) containing the `.kicad_mod` definition and matching `.step` model.
+
+| Folder | Used For |
+|---|---|
+| [`BMS-2S 20A`](Footprints/BMS-2S%2020A) | Battery management module (U8) |
+| [`CA-1235 (Step-Down)`](Footprints/CA-1235%20%28Step-Down%29) | 5V step-down converter (U5) |
+| [`ESP32-CAM`](Footprints/ESP32-CAM) | ESP32-CAM module footprint |
+| [`ESP32-DEVKITC-32E`](Footprints/ESP32-DEVKITC-32E) | ESP32 DevKit footprint (Core / Inference modules) |
+| [`LM2596-Buck(DC-DC)`](Footprints/LM2596-Buck%28DC-DC%29) | 3.3V buck converter (U12) |
+| [`MIO-PCB-Logo`](Footprints/MIO-PCB-Logo) | Silkscreen logo footprint |
+| [`ON-OFF Switch`](Footprints/ON-OFF%20Switch) | Power on/off switch |
+
+**To use these in KiCad:**
+
+1. Open **Preferences → Manage Footprint Libraries**.
+2. Add each folder under [`Footprints/`](Footprints) as its own library entry (or point to the parent folder if your KiCad version supports nested library discovery).
+3. Confirm each footprint's **3D Models** tab (Footprint Properties) is correctly linked to its `.step` file — this is what drives the renders in the [Board Renders](#board-renders) section above.
+
+---
+
 ## Manufacturing Files
 
 Ready-to-fabricate outputs are provided for direct submission to a PCB manufacturer (JLCPCB, PCBWay, or equivalent), plus a Bill of Materials for sourcing components.
@@ -107,8 +129,16 @@ MIO-Blind-Bot-PCB/
 │   ├── MIO-Gerbers/
 │   ├── MIO-Blind BOT.csv
 │   └── MIO-Gerber.zip
+├── Footprints/
+│   ├── BMS-2S 20A/
+│   ├── CA-1235 (Step-Down)/
+│   ├── ESP32-CAM/
+│   ├── ESP32-DEVKITC-32E/
+│   ├── LM2596-Buck(DC-DC)/
+│   ├── MIO-PCB-Logo/
+│   └── ON-OFF Switch/
 ├── Symbols/
-│   └── MIO-Logo.png
+│   └── MIO-Logo.gif
 └── README.md
 ```
 
@@ -132,7 +162,7 @@ To open and edit this design locally:
 1. Install [KiCad](https://www.kicad.org/download/) (v8 or later recommended).
 2. Clone this repository:
    ```bash
-   git clone https://github.com/GuruManoharGuptaBaratam/MIO-Blind-Bot-PCB.git
+        git clone https://github.com/GuruManoharGuptaBaratam/MIO-Blind-Bot-PCB.git
    ```
 3. Open [`Hardware/MIO-Blind BOT.kicad_pro`](Hardware/MIO-Blind%20BOT.kicad_pro) in KiCad.
 
@@ -142,8 +172,7 @@ To order the board as-is, download [`MIO-Gerber.zip`](Manfacturing/MIO-Gerber.zi
 
 ## Roadmap
 
-- [ ] Footprint library documentation
-- [ ] 3D model / STEP file exports
+- [x] Footprint library (`.kicad_mod`) and 3D models (`.step`)
 - [ ] Bring-up and test notes
 
 ---
